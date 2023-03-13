@@ -1,0 +1,25 @@
+{
+  "name": "brief4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpaceRag/Biref4_Quiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpaceRag/Biref4_Quiz/issues"
+  },
+  "homepage": "https://github.com/SpaceRag/Biref4_Quiz#readme",
+  "dependencies": {
+    "parcel": "^2.8.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

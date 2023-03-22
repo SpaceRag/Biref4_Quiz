@@ -1,18 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      
 }
 
 body {
     background: lightgreen;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
 
 .hidden {
     display: none;
@@ -21,34 +17,41 @@ body {
 .display {
     display: flex;
 }
-/* SECTION lANDIGN PAGE */
 
+.wrapper_all {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* SECTION lANDING PAGE */
 
 .wrapper_home {
     background: lightgreen;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     
 }
 
 #header {
     background-color: rgba(183, 182, 180, 0.504);
     color: white;
-    border-bottom-left-radius:  10%;
-    border-bottom-right-radius: 10%;
-    padding: 5%;
+    width: 100%;
+    border-bottom-left-radius:  20px;
+    border-bottom-right-radius: 20px;
+    padding: 1rem;
     text-align: center;
 }
 
-
 .wrapper_logo button {
    background: rgb(139, 199, 153);
-   margin: 70px;
-   padding: 50px;
-   border-radius: 30%;
+   padding: 3rem;
+   border-radius: 20px;
    border-style: none;
    font-size: 20px;
    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25) ;
@@ -56,20 +59,20 @@ body {
    font-weight: bold;
 }
 
-.user_input {
+/* .user_input {
     background-color: rgba(255, 255, 255, 0.472);
     width: 80%;
     padding: 20px;
     margin: 25px;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25) ;
-}
+} */
 
 
 .welcome_text {
     background-color: rgba(107, 107, 107, 0.337);
-    margin: 10%;
-    padding: 10%;
+    padding: 2rem;
+    margin-inline: 5%;
     text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25) ;
@@ -78,16 +81,15 @@ body {
 
 .next_button button {
     background-color: rgba(142, 157, 172, 0.722);
-    min-width: 175px;
-    min-height: 70px;
-    margin-top: 40%;
-    margin-bottom: 60%;
+    padding: 1.5rem;
     border: none;
     text-align: center;
     border-radius: 30px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
     font-size: 30px;
     color: white;
+    cursor: pointer;
+    
 }
 
 /* SECTION QUESTIONS */
@@ -95,17 +97,18 @@ body {
 
 .wrapper_question {
     background: lightgreen;
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-content: center;
+    justify-content: space-evenly;
 }
 
 .question_card {
     background-color: rgba(107, 107, 107, 0.337);
-    margin: 10%;
-    padding: 10%;
+    padding: 3rem;
+    margin-inline: 5%;
     text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25) ;
@@ -117,26 +120,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
-    margin: 10%;
-
-}
-
-#Q1 {
-
-    background-color: rgba(184, 200, 215, 0.722);
-    min-width: 175px;
-    min-height: 70px;
-    border: none;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-    font-size: 30px;
-    color: white;
-
-}
-
-#Q2 {
+    margin-inline: 5%;
     
+
+}
+
+.questionStyle {
     background-color: rgba(184, 200, 215, 0.722);
     min-width: 175px;
     min-height: 70px;
@@ -146,56 +135,29 @@ body {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
     font-size: 30px;
     color: white;
-
 }
 
-#Q3 {
-    
-    background-color: rgba(184, 200, 215, 0.722);
-    min-width: 175px;
-    min-height: 70px;
-    border: none;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-    font-size: 30px;
-    color: white;
-
-}
-
-#Q4 {
-    
-    background-color: rgba(184, 200, 215, 0.722);
-    min-width: 175px;
-    min-height: 70px;
-    border: none;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-    font-size: 30px;
-    color: white;
-
-}
 
 /* SECTION GOOD REPONSE */
-
+/* SECTION BAD REPONSE */
 
 
 .wrapper_good {
     background: lightgreen;
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    
     
 }
 
 .congrats_text  {
     background-color: rgba(107, 107, 107, 0.337);
-    margin: 10%;
-    padding: 10%;
+    margin-inline: 5%;
+    padding: 3rem;
     text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25) ;
@@ -203,12 +165,9 @@ body {
 }
 
 .continue_button button {
-    background-color: rgba(142, 157, 172, 0.722);
-    min-width: 175px;
-    min-height: 70px;
-    margin-top: 40%;
-    margin-bottom: 60%;
-    margin-left: auto;
+    background-color: rgba(142, 157, 172, 0.33);
+    padding: 1.5rem;
+    margin-top: 20%;
     border: none;
     text-align: center;
     border-radius: 30px;
@@ -219,3 +178,15 @@ body {
 
 
 /* SECTION BAD REPONSE */
+
+.wrapper_bad {
+    background: lightgreen;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+
+}

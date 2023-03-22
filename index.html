@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,93 @@
     <title>Quizz_Biref_4</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <main>
+        <section id="Home" class="display">
+            <div class="wrapper_home">
+                <h1 id="header">Positive Impact</h1>
+                <div class="wrapper_logo">
+                    <button id="logo">Quiz Ecolo</button>
+                </div>
+                <!-- <div class="input_pseudo">
+                    <div class="user_input">
+                        <input type="text" placeholder="Pseudo">
+                    </div>
+                </div> -->
+                <div class="welcome_text">
+                    <h2>Les solutions écolo en action</h2>
+                </div>
+                <div class="next_button">
+                    <button id="yesButton">Let's Go !</button>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="questionBoard" class="hidden">
+            <div class="wrapper_question ">
+                <h1 id="header">Positive Impact Question</h1>
+                <div class="question_card">
+                    <h2 id="blocQuestion"></h2>
+                </div>
+                <div class="button_question">
+                    <button id="Q1"></button>
+                    <button id="Q2"></button>
+                    <button id="Q3">Vélo</button>
+                    <button id="Q4">Bus</button>
+                </div>
+            </div>
+        </section>
+        <section id="goodResult" class="hidden">
+        <div class="wrapper_good">
+            <h1 id="header">Positive Impact</h1>
+            <!-- <div class="wrapper_logo">
+                <button>LOGO</button>
+            </div> -->
+            <div class="congrats_text">
+                <h1>Bravo, vous avez choisi la bonne réponse !</h1>
+            </div>
+            <div id="continuButtonGood" class="continue_button">
+                <button>Continuer</button>
+            </div>
+        </div>
+    </section>
+    <section id="badResult" class="hidden">
+        <div class="wrapper_bad">
+            <h1 id="header">Positive Impact</h1>
+            <!-- <div class="wrapper_logo">
+                <button>LOGO</button>
+            </div> -->
+            <div class="congrats_text">
+                <h1>Pas loin, mais c'est pas tout a fait ça !</h1>
+            </div>
+            <div id="continuButtonBad" class="continue_button">
+                <button>Continuer</button>
+            </div>
+        </div>
+    </section>
+    <section id="end" class="hidden">
+        <div class="wrapper_home">
+            <h1 id="header">Positive Impact</h1>
+            <div class="wrapper_logo">
+                <button id="logo">Quiz Ecolo</button>
+            </div>
+            <!-- <div class="input_pseudo">
+                <div class="user_input">
+                    <input type="text" placeholder="Pseudo">
+                </div>
+            </div> -->
+            <div id="endText" class="welcome_text">
+                <h2>Votre score final est de : <span id="score">0</span>/6</h2>
+            </div>
+            <div id="retryButton" class="next_button">
+                <button>Retry</button>
+            </div>
+        </div>
+        </div>
+    </section>
+    </main>
     <script src="./script.ts"></script>
 </body>
+
 </html>

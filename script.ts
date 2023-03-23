@@ -17,10 +17,10 @@ const retryButton: Element| null = document.querySelector("#retryButton")
 let currentQuestionIndex = 0
 let score = 0 
 
-// Rendre le button "Yes" clickable 
+// Rendre le button "Let's Go !" clickable 
 yesButton?.addEventListener("click", function (event: Event) {
 
-    // Quand le button "Yes" est cliké par le user 
+    // Quand le button "Let's Go !" est cliké par le user 
     home?.classList.remove("display")
     home?.classList.add("hidden")
     // afficher la section Questions

@@ -1,21 +1,25 @@
 
 
-// PART HOME
+//Déclaration Constante
 
-// Afficher la home page 
 const home: Element | null = document.querySelector("#Home")
 const question: Element | null = document.querySelector("#questionBoard")
 const goodResult: Element | null = document.querySelector("#goodResult")
 const badResult: Element | null = document.querySelector("#badResult")
 const end: Element | null = document.querySelector("#end")
-// Récuperer le button "Yes"
+
 const yesButton: Element | null = document.querySelector("#yesButton")
 const continuButtonBad: Element | null = document.querySelector("#continuButtonBad")
 const continuButtonGood: Element | null = document.querySelector("#continuButtonGood")
 const retryButton: Element| null = document.querySelector("#retryButton")
 
+// Déclaration variable 
+
 let currentQuestionIndex = 0
-let score = 0 
+let score:number = 0 
+let timer: number = 0 
+
+// PART HOME
 
 // Rendre le button "Let's Go !" clickable 
 yesButton?.addEventListener("click", function (event: Event) {
@@ -27,10 +31,16 @@ yesButton?.addEventListener("click", function (event: Event) {
     question?.classList.remove("hidden")
     question?.classList.add("display")
 
+   
     populateQuestion(data[currentQuestionIndex])
 })
 
 
+
+// function funcTrigeredByTimeOut(timer: number) {
+//     console.log("time out!")
+// }
+// setTimeout(funcTrigeredByTimeOut, 3000)
 
 // PART QUESTIONS
 

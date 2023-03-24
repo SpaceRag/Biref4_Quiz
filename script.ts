@@ -11,50 +11,52 @@ const end: Element | null = document.querySelector("#end")
 const yesButton: Element | null = document.querySelector("#yesButton")
 const continuButtonBad: Element | null = document.querySelector("#continuButtonBad")
 const continuButtonGood: Element | null = document.querySelector("#continuButtonGood")
-const retryButton: Element| null = document.querySelector("#retryButton")
-const pseudo: Element | null  = document.querySelector('#pseudo')
+const retryButton: Element | null = document.querySelector("#retryButton")
+const pseudo: Element | null = document.querySelector('#pseudo')
 const btn1: Element | null = document.querySelector("#btn1")
 const out1: Element | null = document.querySelector("#output")
-const errorMessage: string = "Player name"
+const errorMessage: string = "Player Name"
 // Déclaration variable 
 
 let currentQuestionIndex = 0
-let score:number = 0 
-let timer: number = 0 
-let username : string | null = null
+let score: number = 0
+let timer: number = 0
+let username: string | null = null
 // PART HOME
 
 // USER PSEUDO INPUT
 
-pseudo?.addEventListener("input", function(event :Event) {
-        username = (event.target as HTMLInputElement).value
+pseudo?.addEventListener("input", function (event: Event) {
+    username = (event.target as HTMLInputElement).value
 })
 
-yesButton?.addEventListener("click",function(event: Event){
-    if(!username) {
+yesButton?.addEventListener("click", function (event: Event) {
+    if (!username) {
         pseudo.value = errorMessage
         pseudo.style.color = "red"
     } else {
         // Quand le button "Let's Go !" est cliké par le user 
-    home?.classList.remove("display")
-    home?.classList.add("hidden")
-    // afficher la section Questions
-    question?.classList.remove("hidden")
-    question?.classList.add("display")
-    
+        home?.classList.remove("display")
+        home?.classList.add("hidden")
+        // afficher la section Questions
+        question?.classList.remove("hidden")
+        question?.classList.add("display")
 
-    populateQuestion(data[currentQuestionIndex])
+
+        populateQuestion(data[currentQuestionIndex])
 
     }
 
 })
 
-
+// TIMER 
 
 // function funcTrigeredByTimeOut(timer: number) {
 //     console.log("time out!")
 // }
 // setTimeout(funcTrigeredByTimeOut, 3000)
+
+
 
 // PART QUESTIONS
 
@@ -115,10 +117,10 @@ function incrementScore(points: number) {
     score += points;
     let scoreElement = document.getElementById("score")
     if (scoreElement) {
-      scoreElement.innerHTML = " " + score
+        scoreElement.innerHTML = " " + score
     }
-  }
-  
+}
+
 
 //  Quand le user click sur le button continuer 
 //  passer a la question suivante
@@ -143,15 +145,15 @@ continuButtonBad?.addEventListener("click", function (event: Event) {
         question?.classList.add("hidden")
         end?.classList.remove("hidden")
         end?.classList.add("display")
-   
+
     }
 
-  
+
 })
 
 
 //Bonne réponse 
-continuButtonGood?.addEventListener("click", function(event : Event) {
+continuButtonGood?.addEventListener("click", function (event: Event) {
     // Masquer la section "goodResult"
     goodResult?.classList.remove("display")
     goodResult?.classList.add("hidden")
@@ -170,7 +172,7 @@ continuButtonGood?.addEventListener("click", function(event : Event) {
         question?.classList.add("hidden")
         end?.classList.remove("hidden")
         end?.classList.add("display")
-       
+
     }
 
 })
@@ -180,7 +182,7 @@ continuButtonGood?.addEventListener("click", function(event : Event) {
 // Quand user click sur retryButton -> Affiche la popup
 // Puis quand le bouton est cliké -> refresh la page
 
-retryButton?.addEventListener("click", function(event: Event) {
+retryButton?.addEventListener("click", function (event: Event) {
     showPopup("La planète a besoin de vous !", "Je veux la protéger !");
 })
 
@@ -188,7 +190,7 @@ function refresh() {
     // code pour rafraîchir la page
     location.reload()
 }
-// Création de la popup avec 'creatElement'
+// Création du html/css de la popup avec 'creatElement'
 function showPopup(message: string, buttonText: string) {
     const popup = document.createElement("div")
     popup.style.position = "fixed"
@@ -213,19 +215,23 @@ function showPopup(message: string, buttonText: string) {
     text.style.marginBottom = "20px"
 
     const button = document.createElement("button")
-    button.textContent = buttonText;
-    button.addEventListener("click", function() {
+    button.textContent = buttonText
+    button.style.padding = "1rem"
+    button.style.borderRadius = "20px"
+    button.style.borderStyle = "none"
+    button.style.boxShadow = " 5px 5px 5px rgba(0, 0, 0, 0.25)"
+    // Quand le button est cliké par le user ->
+    button.addEventListener("click", function () {
         refresh();
     });
-
+    
+    // Fait apparaitre la popup 
     content.appendChild(text)
     content.appendChild(button)
     popup.appendChild(content)
     document.body.appendChild(popup)
-    
+
 }
-
-
 
 
 

@@ -10,24 +10,24 @@
 </head>
 
 <body>
-    <header> <h1 id="header">Positive Impact</h1></header>
+    <header>
+        <h1 id="header">Positive Impact</h1>
+    </header>
     <main class="wrapper_all">
         <section id="Home" class="display">
             <div class="wrapper_home">
                 <div class="wrapper_logo">
                     <button id="logo">Quiz Ecolo</button>
                 </div>
-                    <div class="user_input">
-                        <input type="text" id="pseudo" placeholder="Player Name" maxlength="15">
-                        <p id="output"></p>
-                    </div>
+                <div class="user_input">
+                    <input type="text" id="pseudo" placeholder="Player Name" maxlength="25">
+                </div>
                 <div class="welcome_text">
                     <h2>Les solutions écolo en action</h2>
                 </div>
                 <div class="next_button">
                     <button id="yesButton" class="button">Let's Go !</button>
                 </div>
-            </div>
             </div>
         </section>
         <section id="questionBoard" class="hidden">
@@ -44,39 +44,38 @@
             </div>
         </section>
         <section id="goodResult" class="hidden">
-        <div class="wrapper_good">
-            <div class="congrats_text">
-                <h1>Bravo, vous avez choisi la bonne réponse !</h1>
+            <div class="wrapper_good">
+                <div class="congrats_text">
+                    <h1>Bravo, vous avez choisi la bonne réponse !</h1>
+                </div>
+                <div id="continuButtonGood" class="continue_button">
+                    <button class="button">Continuer</button>
+                </div>
             </div>
-            <div id="continuButtonGood" class="continue_button">
-                <button class="button">Continuer</button>
+        </section>
+        <section id="badResult" class="hidden">
+            <div class="wrapper_bad">
+                <div class="congrats_text">
+                    <h1>Pas loin, mais c'est pas tout a fait ça !</h1>
+                </div>
+                <div id="continuButtonBad" class="continue_button">
+                    <button class="button">Continuer</button>
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="badResult" class="hidden">
-        <div class="wrapper_bad">
-            <div class="congrats_text">
-                <h1>Pas loin, mais c'est pas tout a fait ça !</h1>
+        </section>
+        <section id="end" class="hidden">
+            <div class="wrapper_end">
+                <div class="wrapper_logo">
+                    <button id="logo">Quiz Ecolo</button>
+                </div>
+                <div id="endText" class="welcome_text">
+                    <h2>Votre score final est de : <span id="score">0</span>/6</h2>
+                </div>
+                <div id="retryButton" class="next_button">
+                    <button class="button">Retry</button>
+                </div>
             </div>
-            <div id="continuButtonBad" class="continue_button">
-                <button class="button">Continuer</button>
-            </div>
-        </div>
-    </section>
-    <section id="end" class="hidden">
-        <div class="wrapper_end">
-            <div class="wrapper_logo">
-                <button id="logo">Quiz Ecolo</button>
-            </div>
-            <div id="endText" class="welcome_text">
-                <h2>Votre score final est de : <span id="score">0</span>/6</h2>
-            </div>
-            <div id="retryButton" class="next_button">
-                <button class="button">Retry</button>
-            </div>
-        </div>
-        </div>
-    </section>
+        </section>
     </main>
     <script src="./script.ts"></script>
 </body>

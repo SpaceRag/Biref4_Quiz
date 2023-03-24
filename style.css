@@ -62,14 +62,23 @@ body {
    cursor: pointer;
 }
 
-/* .user_input {
+.user_input {
     background-color: rgba(255, 255, 255, 0.472);
     width: 80%;
-    padding: 20px;
-    margin: 25px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25) ;
-} */
+}
+
+.user_input input {
+    margin-inline: 2rem;
+
+}
 
 
 .welcome_text {

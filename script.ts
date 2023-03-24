@@ -12,27 +12,41 @@ const yesButton: Element | null = document.querySelector("#yesButton")
 const continuButtonBad: Element | null = document.querySelector("#continuButtonBad")
 const continuButtonGood: Element | null = document.querySelector("#continuButtonGood")
 const retryButton: Element| null = document.querySelector("#retryButton")
-
+const pseudo: Element | null  = document.querySelector('#pseudo')
+const btn1: Element | null = document.querySelector("#btn1")
+const out1: Element | null = document.querySelector("#output")
+const errorMessage: string = "Player name"
 // Déclaration variable 
 
 let currentQuestionIndex = 0
 let score:number = 0 
 let timer: number = 0 
-
+let username : string | null = null
 // PART HOME
 
-// Rendre le button "Let's Go !" clickable 
-yesButton?.addEventListener("click", function (event: Event) {
+// USER PSEUDO INPUT
 
-    // Quand le button "Let's Go !" est cliké par le user 
+pseudo?.addEventListener("input", function(event :Event) {
+        username = (event.target as HTMLInputElement).value
+})
+
+yesButton?.addEventListener("click",function(event: Event){
+    if(!username) {
+        pseudo.value = errorMessage
+        pseudo.style.color = "red"
+    } else {
+        // Quand le button "Let's Go !" est cliké par le user 
     home?.classList.remove("display")
     home?.classList.add("hidden")
     // afficher la section Questions
     question?.classList.remove("hidden")
     question?.classList.add("display")
+    
 
-   
     populateQuestion(data[currentQuestionIndex])
+
+    }
+
 })
 
 
@@ -163,22 +177,55 @@ continuButtonGood?.addEventListener("click", function(event : Event) {
 
 // PART END/SCORE
 
-// Quand user click sur retryButton -> refresh la page
+// Quand user click sur retryButton -> Affiche la popup
+// Puis quand le bouton est cliké -> refresh la page
 
-retryButton?.addEventListener("click", function(event : Event) {
-    end?.classList.remove("display")
-    end?.classList.add("hidden")
-    home?.classList.remove("hidden")
-    home?.classList.add("display")
-
-    refresh()
+retryButton?.addEventListener("click", function(event: Event) {
+    showPopup("La planète a besoin de vous !", "Je veux la protéger !");
 })
 
-
-// rafraichi la page pour retour home 
 function refresh() {
+    // code pour rafraîchir la page
     location.reload()
 }
+// Création de la popup avec 'creatElement'
+function showPopup(message: string, buttonText: string) {
+    const popup = document.createElement("div")
+    popup.style.position = "fixed"
+    popup.style.top = "0"
+    popup.style.left = "0"
+    popup.style.width = "100%"
+    popup.style.height = "100%"
+    popup.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
+    popup.style.display = "flex"
+    popup.style.justifyContent = "center"
+    popup.style.alignItems = "center"
+    popup.style.background = "rgba(183, 182, 180, 0.504)"
+
+    const content = document.createElement("div")
+    content.style.backgroundColor = "white"
+    content.style.padding = "20px"
+    content.style.borderRadius = "10px"
+    content.style.textAlign = "center"
+
+    const text = document.createElement("p")
+    text.textContent = message;
+    text.style.marginBottom = "20px"
+
+    const button = document.createElement("button")
+    button.textContent = buttonText;
+    button.addEventListener("click", function() {
+        refresh();
+    });
+
+    content.appendChild(text)
+    content.appendChild(button)
+    popup.appendChild(content)
+    document.body.appendChild(popup)
+    
+}
+
+
 
 
 
